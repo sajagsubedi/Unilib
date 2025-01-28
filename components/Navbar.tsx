@@ -85,7 +85,7 @@ const Navbar = () => {
     };
   });
   return (
-    <nav id="nav" ref={navRef} className="linearGradientBg">
+    <nav id="nav" ref={navRef} className="linearGradientBg1">
       <div id="phoneVisible">
         <div id="logo">
           <Image
