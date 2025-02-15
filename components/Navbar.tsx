@@ -17,7 +17,7 @@ const Navbar = () => {
   const menuToggleRef = useRef<HTMLDivElement | null>(null);
 
   const pathname = usePathname();
-  console.log(pathname)
+  console.log(pathname);
 
   const navLinkItems = [
     {
@@ -91,12 +91,12 @@ const Navbar = () => {
           <Image
             src="/logo.svg"
             alt="logo"
-            className="h-12 w-auto"
+            className="h-12 w-12"
             width={48}
             height={48}
           />
+          <h2>Unilib</h2>
         </div>
-        <h2>Unilib</h2>
         <div id="menuToggle" ref={menuToggleRef} onClick={handleMenuToggle}>
           <AlignJustify />
         </div>
@@ -106,20 +106,20 @@ const Navbar = () => {
           {navLinkItems.map((item, id) => (
             <li className="navLinkItem" key={id}>
               <Link
-                href={`#${item.path}`}
+                href={`${item.path}`}
                 className={`navLink ${
                   pathname == item.path ? "primaryLink" : ""
                 }`}
               >
                 {item.name}
               </Link>
-              <Link href={`#${item.path}`} className="hoverLink">
+              <Link href={`${item.path}`} className="hoverLink">
                 {item.name}
               </Link>
             </li>
           ))}
         </div>
-        <div className="px-6 w-max flex justify-end">
+        <div className="md:px-6 w-max flex justify-end overflow-hidden">
           <Button>Search</Button>
         </div>
       </ul>
